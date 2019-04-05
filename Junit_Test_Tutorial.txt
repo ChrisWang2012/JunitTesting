@@ -1,0 +1,31 @@
+Before going deep into Junit Test to Hibernate, you should start with the basic usage of Junit Test in Java.
+In real life, many methods will be created weekly or monthly in enterprises, but before the methods implemented, many tests should be done in advance.
+Junit provides such functions to test the methods we write without putting them into the producing environment.
+In the case below, the basic usage of Junit test is shown.
+First, create a new Java project in your Eclipse, you can name it "JunitTest" or something similar.
+Then create a new class with the same name, you will create two methods in this class.
+The first class you are going to create is cube() methods. It is to calculate the cube of a given number.
+The second class you are going to create is countX() methods. It is to calculate the number of X in a given String.
+
+After creating the methods, you will need to create Junit Test Case for each of them instead of creating main class/method.
+To do this, you can right click on the default package or the package you named. choose new Junit Test Case and a window will pop up.
+You can name the Junit case  "cubeTesting" or anything you like. Then a default test class is created.
+You can see a default test method with fail("Not yet implemented");
+You will need to delete this content and rewrite the test method.
+Below is the cube test Method.
+
+public void test() {
+		JunitTesting test = new JunitTesting();  // this is the class contains your methods, to call the methods you need to create this class object.
+		int output = test.cube(3);  // the output will be the cube of integer 3.
+		assertEquals(27, output);  // assert method is the method to check if the result is what we predict. In this case, we know the cube of 3 is 27.
+	}
+
+Now you can run the Junit Test, and the details about how many test run, any error or failure will shows up.
+Please finish the countXTest by yourself.
+
+You now have successfully created two Test cases. but it is inconvenient to test them one by one, especially when you have a lot of tests.
+Actually, you can put all the test in one test case.
+To do this, you can right click on the project and in the 'new' list choose others.
+In the list, click Java folder, then click Junit folder, then choose JunitTestSuite. And a window would pop up.
+Find all the test cases you want to combine in the default package or the certain name you just given. Click Finish and you are all set.
+now try to run this test suite case, you will find that all the test cases you selected run together. 
